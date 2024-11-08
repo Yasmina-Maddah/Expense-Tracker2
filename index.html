@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="Styles/home.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        
+        <form id="transaction-form">
+            <input type="text" id="note" placeholder="Note" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <input type="date" id="date" required>
+            <button type="submit">Add Transaction</button>
+        </form>
+
+        <div class="budget-display">
+            <h2>Total Budget: <span id="total-budget">$0.00</span></h2>
+        </div>
+
+        <div class="filters">
+            <input type="number" id="min-price" placeholder="Min Price">
+            <input type="number" id="max-price" placeholder="Max Price">
+            <select id="filter-type">
+                <option value="all">All</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <input type="date" id="filter-date">
+            <input type="text" id="filter-note" placeholder="Note Filter">
+            <button id="apply-filters">Apply Filters</button>
+        </div>
+
+        <ul id="transaction-list"></ul>
+    </div>
+
+    <script src="Scripts/index.js"></script>
+</body>
+</html>
