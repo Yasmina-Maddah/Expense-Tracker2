@@ -2,17 +2,19 @@
 include '../connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'];
-    $budget = $_POST['budget'];
+    $amount = $_POST['amount'];
+    $note = $_POST['note'];
+    $user_id = $_POST['user_id'];
+    $date = $_POST['date'];
 
-    $sql = "INSERT INTO users (name, budget) VALUES (?, ?)";
+    $sql = "INSERT INTO incomes (amount, note, user_id, date) VALUES (?, ?, ?, ?)";
     $stmt = $connection->prepare($sql);
-    $stmt->bind_param('si', $name, $budget);
+    $stmt->bind_param('isis', $amount, $note, $user_id, $date);
 
     if ($stmt->execute()) {
-        echo json_encode(["message" => "User created successfully"]);
+        echo json_encode(["message" => "Income created successfully"]);
     } else {
-        echo json_encode(["error" => "Failed to create user"]);
+        echo json_encode(["error" => "Failed to create income"]);
     }
 
     $stmt->close();
