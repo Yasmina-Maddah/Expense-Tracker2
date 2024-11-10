@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateBudget();
     }
 
-    // Add a new transaction
     transactionForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const note = document.getElementById("note").value;
