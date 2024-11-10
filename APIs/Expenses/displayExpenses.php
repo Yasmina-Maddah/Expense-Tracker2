@@ -1,5 +1,5 @@
 <?php
-require_once '../Database/connection.php';
+include '../connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $expense_id = $_POST['id'];
